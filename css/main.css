@@ -1,0 +1,158 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color:rgb(200,200,200);
+}
+
+.main-container{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:900px;
+    min-height:400px;
+    padding: 50px;
+    background-color:rgba(0,0,0,.9);
+    border-radius:15px;
+    color:rgb(255,255,255);
+}
+
+.main-container h1, .main-container h2{
+    font-weight:normal;
+}
+
+.books-box{
+    width:750px;
+    min-height:200px;
+    padding: 50px;
+
+    border-radius:5px;
+}
+
+.books-tbl, .books-tbl th, .books-tbl td{
+    text-align:center;
+    border: 1px solid white;
+    padding: 2px;
+}
+
+.books-tbl{
+    border-collapse: collapse;
+}
+
+.books-tbl th:first-child{
+    width:50px;
+}
+
+.books-tbl th{
+    width:250px;
+}
+
+.books-tbl td:last-child{
+    width:50px;
+}
+
+.tbl-edit,.tbl-delete{
+    transition-property:color;
+    transition-duration:0.5s;
+}
+
+.tbl-edit{color:rgb(150,150,150);}
+.tbl-edit:hover{color:rgb(255,255,255);cursor:pointer;}
+
+.tbl-delete{color:rgb(100,0,0);}
+.tbl-delete:hover{color:rgb(255,0,0);}
+
+.btn-verify-delete{
+    width:200px;
+    height:35px;
+    margin:15px;
+    border-radius:10px;
+
+    outline:none;
+    border:none;
+
+    border: 1px solid white;
+
+    transition-property:background-color,color,border-color;
+    transition-duration:.5s;
+
+}
+
+.btn-verify-delete:hover{
+    cursor:pointer;
+    background-color:rgba(255,255,255,.5);
+}
+
+.submit-delete-book:hover{
+    border-color:rgb(100,0,0);
+    background-color:rgba(255,0,0,.5);
+    color:rgb(255,255,255);
+}
+
+.form-section{
+    margin:15px;
+    margin-top:0;
+}
+.form-section label{
+    font-size:18px;
+}
+.form-section input[type="text"],.form-section input[type="number"]{
+    width:200px;
+    height:20px;
+    border-radius:5px;
+    border:0;
+}
+
+.books_add-btn{
+    margin-top:25px;
+    width:97.5px;
+    height:25px;
+    border-radius: 5px;
+    border:0;
+}.books_add-btn:hover{cursor:pointer;}
+
+.addBook{
+    width:150px;
+    text-align:Center;
+    padding: 15px 5px;
+    background-color:rgba(0,0,0,1);
+
+    text-transform: uppercase;
+
+    position:absolute;
+    bottom: 5px;
+    left: 5px;
+
+    border-bottom-left-radius: 10px;
+
+    transition-property:background-color;
+    transition-duration:.5s;
+}
+
+.addBook:hover{
+    background-color:rgba(50,50,50,.5);
+    cursor:pointer;
+}
+
+.login-panel{
+    position:absolute;
+    top:50px;
+    right:50px;
+    width:200px;
+    background-color:rgba(0,0,0,.5);
+    text-align:Center;
+    padding: 20px 0px;
+}
+.login-panel label{
+    color:rgb(255,255,255);
+    font-size:18px;
+}
+
+.login-panel input{width:150px;outline:0;border:0}
+
+.sign-in{
+    height:25px;
+}
