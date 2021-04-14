@@ -15,8 +15,24 @@ if(filter_has_var(INPUT_POST, 'book-title') and isset($_POST['book-author']) ) {
     //var_dump($b);
     BooksRepo::saveBook($b);
 
-//    header("Location : index.php");
+    if(devMode){
+        echo "<br/><input type='button' value='Powrót do strony głównej' onclick='window.location.href = `index.php`'>";
+
+
+        echo "<br/><br/>";
+
+        echo "Title: ".$title."<br/>";
+        echo "Author: ".$author."<br/>";
+        echo "Price: ".$price."<br/>";
+        echo "Amount: ".$amount."<br/>";
+
+        echo "<br/><br/>";
+        var_dump($b);
+
+    }
 
 }else{
-    header("Location : addBook.html");
+    if(!devMode){
+        header("Location : addBook.php");
+    }
 }

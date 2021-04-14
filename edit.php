@@ -20,4 +20,11 @@
         $connection->close();
     }
 
-header("Location: index.php");
+if(!devMode){
+    header("Location: index.php");
+}else{
+    echo "<br/><input type='button' value='Powrót do strony głównej' onclick='window.location.href = `index.php`'>";
+
+    echo"<br/><br/>";
+    if ($connection->error) var_dump($connection->error);
+}

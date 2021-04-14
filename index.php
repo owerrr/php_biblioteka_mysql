@@ -49,6 +49,17 @@
             $sql = "SELECT Id,Title,Author,Price,Amount FROM books";
             $res = mysqli_query($connection, $sql);
 
+            if(devMode){
+                echo "<div class='devInfo'>Tryb deweloperski aktualnie jest uruchomiony.<br/>Aby go zdezaktywować, przestaw wartość 'devMode'.</div>";
+
+                var_dump($sql);
+                echo "<br/><br/>";
+                var_dump($res);
+                echo "<br/><br/>";
+
+
+            }
+
             //var_dump($res);
 
             if(mysqli_num_rows($res) > 0){
@@ -89,7 +100,7 @@
             ?>
         </div>
 
-        <div class="addBook" onclick = "window.location.href = 'addBook.html'">
+        <div class="addBook" onclick = "window.location.href = 'addBook.php'">
             Dodaj nową
         </div>
 

@@ -20,7 +20,13 @@
     <br/>
 
     <div class="books-box">
+        <?php
+            require_once("config.php");
 
+            if(devMode){
+                echo "<div class='devInfo'>Tryb deweloperski aktualnie jest uruchomiony.<br/>Aby go zdezaktywować, przestaw wartość 'devMode'.</div>";
+            }
+        ?>
       <form action="addNewBook.php" method="POST">
         <div class="form-section">
           <label for="book-title">Tytuł</label>

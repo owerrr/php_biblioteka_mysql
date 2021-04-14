@@ -26,17 +26,33 @@
             require_once("BooksRepo.php");
             require_once("config.php");
 
+        if(devMode){
+            echo "<div class='devInfo'>Tryb deweloperski aktualnie jest uruchomiony.<br/>Aby go zdezaktywować, przestaw wartość 'devMode'.</div>";
+        }
+
             # open sql connection
             $connection = new mysqli(servername, user, password, database);
 
         $sql = "SELECT Id,Title,Author,Price,Amount FROM books WHERE id = ".$_GET['id'];
         $res = mysqli_query($connection, $sql);
 
-//            var_dump($res);
+        var_dump($res);
 
-            foreach($res as $row){
-                $b = new Books($row['Title'],$row['Author'],$row['Price'],$row['Amount']);
-            }
+        $res_arr = $res->fetch_array();
+
+//        var_dump($testowa[0]);
+
+        $b = new Books($res_arr[1], $res_arr[2], $res_arr[3], $res_arr[4]);
+
+        if(devMode == true){
+            var_dump($b);
+        }
+        //    var_dump($res[0]);
+
+//            foreach($res as $row){
+//                // var_dump($row);
+//                $b = new Books($row['Title'],$row['Author'],$row['Price'],$row['Amount']);
+//            }
 
 //            var_dump($b);
 

@@ -10,10 +10,22 @@ if(isset($_GET['id'])){
     if($_GET['type'] == 'increase'){
         $sql = "UPDATE books SET amount = ".($_GET['amount']+1)." WHERE ID =".($_GET['id']);
     }else{
-        if($_GET['amount'] <= 0) return header("Location: index.php");
-        $sql = "UPDATE books SET amount = ".($_GET['amount']-1)." WHERE ID =".($_GET['id']);
+        if($_GET['amount'] > 0){
+            $sql = "UPDATE books SET amount = ".($_GET['amount']-1)." WHERE ID =".($_GET['id']);
+        }
     }
     $res = mysqli_query($connection, $sql);
+
+    if(devMode){
+        var_dump($sql);
+        echo "<br/>";
+        var_dump($res);
+        echo "<br/>";
+        echo "<input type='button' value='Powrót do strony głównej' onclick='window.location.href = `index.php`'>";
+
+        echo"<br/><br/>";
+        var_dump($connection->error);
+    }
 
 //    echo $_GET['amount'];
 //    echo $_GET['id'];
@@ -28,5 +40,7 @@ if(isset($_GET['id'])){
     $connection->close();
 
 }
-header("Location: index.php");
+if(!devMode){
+    header("Location: index.php");
 
+}

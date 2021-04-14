@@ -12,9 +12,18 @@
 
         //var_dump($res);
 
+        if(devMode){
+            echo "<br/><input type='button' value='Powrót do strony głównej' onclick='window.location.href = `index.php`'>";
+
+            echo"<br/><br/>";
+            var_dump($connection->error);
+        }
+
         # close sql connection
         $connection->close();
 
     }
-    header("Location: index.php");
+    if(!devMode){
+        header("Location: index.php");
+    }
 
