@@ -22,3 +22,9 @@ php_biblioteka_sql is a basic example for connection with database in php.
 - Put everything from `php_biblioteka_mysql/php_biblioteka_mysql-main` inside `Library`,
 - If you have turned on `Apache` and `MySQL` in XAMPP Control Panel,
   - Open new card with link: `localhost/Library` (Library is your folder name).
+  
+### Devmode
+Development mode is easy to configure at `config.php`.
+
+if you want to enter development mode, go to `config.php` and change variable `devMode` to `true`.
+To disable development mode, set variable `devMode` to `false`.
