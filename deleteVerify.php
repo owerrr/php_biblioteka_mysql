@@ -21,12 +21,40 @@
 
 <?php
 
+require_once("config.php");
+
     echo<<<TEXT
-        <form action="delete.php?id="{$_GET['id']} method="GET" >
-        <input type="submit" value="Potwierdź usunięcie?id=" class="submit-delete-book btn-verify-delete" name="submit"/>
+        <form method="POST" >
+        <input type="submit" value="Potwierdź usunięcie" class="submit-delete-book btn-verify-delete" name="submit"/>
         <input type="button" value="Powrót" class="btn-back btn-verify-delete" onclick="window.location.href = 'index.php'"/>
         </form>
      TEXT;
+
+if(isset($_POST['submit'])){
+
+    # open sql connection
+    $connection = new mysqli(servername, user, password, database);
+
+    $sql = "DELETE FROM books WHERE ID =".($_GET['id']);
+    $res = mysqli_query($connection, $sql);
+
+    //var_dump($res);
+
+    if(devMode){
+        echo "<br/><input type='button' value='Powrót do strony głównej' onclick='window.location.href = `index.php`'>";
+
+        echo"<br/><br/>";
+        var_dump($connection->error);
+    }
+
+    # close sql connection
+    $connection->close();
+    if(!devMode){
+        header("Location: index.php");
+    }
+}
+
+
 ?>
 </div>
 </body>

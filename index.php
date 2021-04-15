@@ -83,7 +83,7 @@
                             ."<td>".$row['Amount']."</td>"
                             ."<td>"
                                 ."<a href='editForm.php?id=".$row['Id']."'><i class='fas fa-edit tbl-edit'></i></a>"
-                                ."<a href='delete.php?id=".$row['Id']."'><i class='fas fa-trash tbl-delete'></i></a>"
+                                ."<a href='deleteVerify.php?id=".$row['Id']."'><i class='fas fa-trash tbl-delete'></i></a>"
                                 ."<a href='amountOperation.php?type=increase&id=".$row['Id']."&amount=".$row['Amount']."'><i class='fas fa-plus tbl-edit'></i></a>"
                                 ." <a href='amountOperation.php?type=decrease&id=".$row['Id']."&amount=".$row['Amount']."'><i class='fas fa-minus tbl-edit'></i></a>"
                             ."</td>";
